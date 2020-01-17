@@ -41,6 +41,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.log4j.Logger;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -139,7 +140,13 @@ public class MinappMsgDecipher {
 		String userInfo = getDecryptInfo(encryptedData, iv, sessionKey);
 		logger.info("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + userInfo);
 
-		JSONObject json4UserInfo = new JSONObject(userInfo);
+		JSONObject json4UserInfo =null;
+		try {
+			json4UserInfo = new JSONObject(userInfo);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		logger.info("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + json4UserInfo);
 		logger.info("========================================================\n");
@@ -160,7 +167,13 @@ public class MinappMsgDecipher {
  	   logger.info("MinappMsgDecipher-getPhoneNumberJSON-decry userPhoneInfo:" + userPhoneInfo);
  	  logger.info("========================================================\n");
  	  
- 	   JSONObject  json4UserInfo = new JSONObject(userPhoneInfo);	
+ 	   JSONObject json4UserInfo = null;
+	try {
+		json4UserInfo = new JSONObject(userPhoneInfo);
+	} catch (JSONException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}	
  	   
 	   return json4UserInfo;
 }
