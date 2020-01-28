@@ -133,13 +133,13 @@ public class MinappMsgDecipher {
     
 	public JSONObject getUserInfoJSON(String encryptedData, String iv, String sessionKey) {
 
-		logger.info("\n========================================================");
-		logger.info("MinappMsgDecipher-getUserInfoJSON-encryptedData:" + encryptedData);
-		logger.info("MinappMsgDecipher-getUserInfoJSON-iv:" + iv);
-		logger.info("MinappMsgDecipher-getUserInfoJSON-sessionKey:" + sessionKey);
+		logger.debug("\n========================================================");
+		logger.debug("MinappMsgDecipher-getUserInfoJSON-encryptedData:" + encryptedData);
+		logger.debug("MinappMsgDecipher-getUserInfoJSON-iv:" + iv);
+		logger.debug("MinappMsgDecipher-getUserInfoJSON-sessionKey:" + sessionKey);
 
 		String userInfo = getDecryptInfo(encryptedData, iv, sessionKey);
-		logger.info("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + userInfo);
+		logger.debug("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + userInfo);
 
 		JSONObject json4UserInfo =null;
 		try {
@@ -149,8 +149,8 @@ public class MinappMsgDecipher {
 			e.printStackTrace();
 		}
 
-		logger.info("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + json4UserInfo);
-		logger.info("========================================================\n");
+		logger.debug("MinappMsgDecipher-getUserInfoJSON-decry userInfo:" + json4UserInfo);
+		logger.debug("========================================================\n");
 
 		return json4UserInfo;
 	}
@@ -158,15 +158,15 @@ public class MinappMsgDecipher {
     
     public  JSONObject getPhoneNumberJSON(String encryptedData,String iv,String sessionKey){
     	
-       logger.info("\n========================================================");
-       logger.info("MinappMsgDecipher-getPhoneNumberJSON-encryptedData:"+encryptedData);
-       logger.info("MinappMsgDecipher-getPhoneNumberJSON-iv:"+iv);
-       logger.info("MinappMsgDecipher-getPhoneNumberJSON-sessionKey:"+sessionKey);
+       logger.debug("\n========================================================");
+       logger.debug("MinappMsgDecipher-getPhoneNumberJSON-encryptedData:"+encryptedData);
+       logger.debug("MinappMsgDecipher-getPhoneNumberJSON-iv:"+iv);
+       logger.debug("MinappMsgDecipher-getPhoneNumberJSON-sessionKey:"+sessionKey);
        
  	   String userPhoneInfo = getDecryptInfo(encryptedData,iv,sessionKey); 
 
- 	   logger.info("MinappMsgDecipher-getPhoneNumberJSON-decry userPhoneInfo:" + userPhoneInfo);
- 	  logger.info("========================================================\n");
+ 	   logger.debug("MinappMsgDecipher-getPhoneNumberJSON-decry userPhoneInfo:" + userPhoneInfo);
+ 	  logger.debug("========================================================\n");
  	  
  	   JSONObject json4UserInfo = null;
 	try {
