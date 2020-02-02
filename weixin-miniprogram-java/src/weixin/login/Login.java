@@ -9,7 +9,10 @@
  */
 package weixin.login;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import weixin.util.HTTPSDataManager;
 
 
 /**
@@ -26,11 +29,11 @@ import org.json.JSONObject;
 public class Login {
 	
 	 //单独的小程序使用(不使用)
-	 public JSONObject getSessionKey(String js_code,String appid,String secret){
+	 public JSONObject getSessionKey(String js_code,String appid,String secret) throws JSONException{
 		 			 
 		 String  url ="https://api.weixin.qq.com/sns/jscode2session?appid="+appid+"&secret="+secret+"&js_code="+js_code+"&grant_type=authorization_code";
 		 
-		 String resStr   =  HttpsDataManager.sendData(url, "");
+		 String resStr   =  HTTPSDataManager.sendData(url, "");
 		 JSONObject  resJSON   = new JSONObject(resStr);
 		 
 		 //MemcachManager  mc    = MemcachManager.getMemcacheManager();		 
