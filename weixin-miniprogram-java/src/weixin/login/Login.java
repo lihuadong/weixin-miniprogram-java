@@ -20,7 +20,6 @@ import weixin.util.HTTPSDataManager;
  * Login
  * 
  * 李华栋
- * 李华栋
  * Sep 5, 2019 9:28:27 AM
  * 
  * @version 0.0.1
@@ -41,5 +40,7 @@ public class Login {
 		 
 		 return resJSON;
 	 }
+	 
+
 
 }
